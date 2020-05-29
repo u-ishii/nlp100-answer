@@ -1,4 +1,4 @@
-import {promises as fs} from 'fs'
+import { promises as fs } from 'fs'
 
 const solve10 = async (): Promise<number> => {
     const popularNames: string = await fs.readFile('./res/popular-names.txt', 'utf-8')
