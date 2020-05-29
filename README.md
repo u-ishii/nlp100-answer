@@ -7,7 +7,7 @@
 
 # How to run
 ```
-npx ts-node src/01.ts
-npx ts-node src/02.ts
+sh run.sh 01
+sh run.sh 02
 ...
 ```
