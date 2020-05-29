@@ -1,8 +1,10 @@
+import { range } from './share/iterable-helper'
+
 export { makeCharNGram }
 
 const makeNGram = (size: number, source: Array<string>): Array<Array<string>> => {
     const end = source.length - size + 1
-    return [...Array(end).keys()]
+    return range(end)
         .map(i => source.slice(i, i + size))
 }
 
