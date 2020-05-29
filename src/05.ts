@@ -1,3 +1,5 @@
+export { makeCharNGram }
+
 const makeNGram = (size: number, source: Array<string>): Array<Array<string>> => {
     const end = source.length - size + 1
     return [...Array(end).keys()]
