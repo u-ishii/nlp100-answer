@@ -1,9 +1,9 @@
-import { promises as fs } from 'fs'
+import fs from 'fs'
 
 export { getEnglandArticle }
 
-const getEnglandArticle = async (): Promise<string> => {
-    return (await fs.readFile('./res/jawiki-country.json', 'utf-8'))
+const getEnglandArticle = (): string => {
+    return fs.readFileSync('./res/jawiki-country.json', 'utf-8')
         .split('\n')
         .filter(row => row.length > 0)
         .map(row => JSON.parse(row))
