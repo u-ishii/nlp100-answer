@@ -1,13 +1,10 @@
-import { promises as fs } from 'fs'
+import fs from 'fs'
 
-const solve11 = async (): Promise<void> => {
-    const table = (await fs.readFile('./res/popular-names.txt', 'utf-8'))
-        .split('\n')
-        .map(row => row.split('\t'))
-    const pickColumn = (i: number): string =>
-        table.map(row => row[i]).join('\n')
-    await fs.writeFile('./res/col1.txt', pickColumn(0))
-    await fs.writeFile('./res/col2.txt', pickColumn(1))
-}
-
-solve11()
+const source = fs.readFileSync('./res/popular-names.txt', 'utf-8')
+const table = source
+    .split('\n')
+    .map(row => row.split('\t'))
+const pickColumn = (i: number): string =>
+    table.map(row => row[i]).join('\n')
+fs.writeFileSync('./res/col1.txt', pickColumn(0))
+fs.writeFileSync('./res/col2.txt', pickColumn(1))

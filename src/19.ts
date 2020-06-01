@@ -1,8 +1,9 @@
-import { promises as fs } from 'fs'
+import fs from 'fs'
 
-const solve19 = async (): Promise<Array<[string, number]>> => {
-    return [
-        ...(await fs.readFile('./res/popular-names.txt', 'utf-8'))
+const source = fs.readFileSync('./res/popular-names.txt', 'utf-8')
+console.log(
+    [
+        ...source
             .split('\n')
             .map(row => row.split('\t')[0])
             .reduce((countMap: Map<string, number>, name) => {
@@ -12,6 +13,4 @@ const solve19 = async (): Promise<Array<[string, number]>> => {
             .entries()
     ]
         .sort(([nameA, countA], [nameB, countB]) => countB - countA)
-}
-
-solve19().then(console.log)
+)

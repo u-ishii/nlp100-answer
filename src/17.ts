@@ -1,11 +1,11 @@
-import { promises as fs } from 'fs'
+import fs from 'fs'
 
-const solve17 = async (): Promise<Array<string>> => {
-    const headChars = (await fs.readFile('./res/popular-names.txt', 'utf-8'))
-        .split('\n')
-        .filter(row => row.length > 0)
-        .map(row => row[0])
-    return [...new Set(headChars)].sort()
-}
-
-solve17().then(console.log)
+const source = fs.readFileSync('./res/popular-names.txt', 'utf-8')
+console.log(
+    [...new Set(
+        source
+            .split('\n')
+            .filter(row => row.length > 0)
+            .map(row => row[0])
+    )].sort()
+)

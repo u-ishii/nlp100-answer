@@ -1,10 +1,12 @@
-import { promises as fs } from 'fs'
+import fs from 'fs'
 
-const solve14 = async (size: number): Promise<string> => {
-    return (await fs.readFile('./res/popular-names.txt', 'utf-8'))
+const source = fs.readFileSync('./res/popular-names.txt', 'utf-8')
+const solve14 = (size: number): string => {
+    return source
         .split('\n')
         .slice(0, size)
         .join('\n')
 }
-
-solve14(10).then(console.log)
+console.log(
+    solve14(10)
+)
