@@ -1,3 +1,5 @@
+export { }
+
 const isSmallLatinAlphabet = (char: string) => {
     const smallACode = 'a'.charCodeAt(0)
     const smallZCode = 'z'.charCodeAt(0)
@@ -17,9 +19,7 @@ const cipher08 = (base: number, source: string): string => {
         .join('')
 }
 
-{
-    const ciphered = cipher08(219, 'The quick brown fox jumps over the lazy dog')
-    console.log(ciphered)
-    const deciphered = cipher08(219, ciphered)
-    console.log(deciphered)
-}
+const ciphered = cipher08(219, 'The quick brown fox jumps over the lazy dog')
+console.log(ciphered)
+const deciphered = cipher08(219, ciphered)
+console.log(deciphered)

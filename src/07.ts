@@ -1,5 +1,4 @@
-const solve07 = (x: any, y: any, z: any): string => {
-    return `${x}時の${y}は${z}`
-}
+export { }
 
-console.log(solve07(12, '気温', 22.4))
+const [x, y, z] = [12, '気温', 22.4]
+console.log(`${x}時の${y}は${z}`)
