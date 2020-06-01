@@ -1,8 +1,7 @@
 import { promises as fs } from 'fs'
 
 const solve11 = async (): Promise<void> => {
-    const popularNames: string = await fs.readFile('./res/popular-names.txt', 'utf-8')
-    const table = popularNames
+    const table = (await fs.readFile('./res/popular-names.txt', 'utf-8'))
         .split('\n')
         .map(row => row.split('\t'))
     const pickColumn = (i: number): string =>

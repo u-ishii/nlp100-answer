@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs'
 
-const solve18 = async (): Promise<any> => {
+const solve18 = async (): Promise<Array<[string, number]>> => {
     return [
         ...(await fs.readFile('./res/popular-names.txt', 'utf-8'))
             .split('\n')
