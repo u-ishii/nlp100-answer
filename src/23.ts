@@ -1,25 +1,20 @@
-import { promises as fs } from 'fs'
-import { AssertionError } from 'assert'
+import { getEnglandArticle } from './share/get-england-article'
+import { notEmpty } from './helper/iterable-helper'
 
 type Section = {name: string, level: number}
 
 const solve23 = async (): Promise<Array<Section>> => {
-    return (await fs.readFile('./res/jawiki-england.json', 'utf-8'))
+    const sectionRegex = /(?<open>==+) *(?<name>[^= ]+) *(?<close>==+)/
+    return (await getEnglandArticle())
         .split('\n')
-        .map(row => {
-            const { text }: { title: string, text: string } = JSON.parse(row)
-            const sectionRegex = /(?<open>==+) *(?<name>[^= ]+) *(?<close>==+)/
-            const match = text.match(sectionRegex)
-            if (match == null || match.groups == undefined)
-                throw new AssertionError
-            const {name, open} = match.groups
-            return {
-                name,
-                level: open.length,
-            }
-        })
-
+        .map(row => row.match(sectionRegex))
+        .filter(notEmpty)
+        .map(match => match.groups)
+        .filter(notEmpty)
+        .map(({name, open}) => ({
+            name,
+            level: open.length - 1,
+        }))
 }
 
-solve23()
-    .then(console.log)
+solve23().then(console.log)

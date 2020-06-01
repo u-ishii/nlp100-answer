@@ -1,18 +1,15 @@
-import { promises as fs } from 'fs'
-import { AssertionError } from 'assert'
+import { getEnglandArticle } from './share/get-england-article'
+import { notEmpty } from './helper/iterable-helper'
 
 type Section = {name: string, level: number}
 
-const solve23 = async (): Promise<Array<string>> => {
-    return (await fs.readFile('./res/jawiki-england.json', 'utf-8'))
+const solve24 = async (): Promise<Array<string>> => {
+    const fileRegex = /\[\[ファイル\:[^\]]+\]\]/
+    return (await getEnglandArticle())
         .split('\n')
-        .map(row => {
-            const { text }: { title: string, text: string } = JSON.parse(row)
-            const fileRegex = /\[\[(?:ファイル|File)\:[^\]]+\]\]/
-            return [...text.matchAll(fileRegex)]
-                .map(match => match[0])
-        })
-        .reduce((merged, files) => [...merged, ...files])
+        .map(row => row.match(fileRegex))
+        .filter(notEmpty)
+        .map(match => match[0])
 }
 
-solve23().then(console.log)
+solve24().then(console.log)

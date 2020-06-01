@@ -1,13 +1,13 @@
-import { promises as fs } from 'fs'
+import { getEnglandArticle } from './share/get-england-article'
+import { notEmpty } from './helper/iterable-helper'
 
 const solve22 = async (): Promise<Array<string>> => {
-    return (await fs.readFile('./res/jawiki-has-category.json', 'utf-8'))
+    const categoryRegex = /\[\[Category\:([^\]]+)\]\]/
+    return (await getEnglandArticle())
         .split('\n')
-        .map(row => {
-            const { text }: { title: string, text: string } = JSON.parse(row)
-            const categoryRegex = /\[\[Category\:([^\]]+)\]\]/
-            return ([...text.match(categoryRegex) || []][1]).split('|')[0]
-        })
+        .map(row => row.match(categoryRegex))
+        .filter(notEmpty)
+        .map(match => match[1].split('|')[0])
 }
 
 solve22().then(console.log)

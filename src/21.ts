@@ -1,14 +1,10 @@
-import { promises as fs } from 'fs'
+import { getEnglandArticle } from './share/get-england-article'
 
-const solve21 = async (): Promise<void> => {
-    const hasCategoryArticles: Array<string> = (await fs.readFile('./res/jawiki-england.json', 'utf-8'))
+const solve21 = async (): Promise<Array<string>> => {
+    const categoryRegex = /\[\[Category\:[^\]]+\]\]/
+    return (await getEnglandArticle())
         .split('\n')
-        .filter(row => {
-            const { text }: { title: string, text: string } = JSON.parse(row)
-            const categoryRegex = /\[\[Category\:[^\]]+\]\]/
-            return categoryRegex.test(text)
-        })
-    await fs.writeFile('./res/jawiki-has-category.json', hasCategoryArticles.join('\n'))
+        .filter(row => categoryRegex.test(row))
 }
 
-solve21()
+solve21().then(console.log)
