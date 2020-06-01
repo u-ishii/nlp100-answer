@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs'
-import { range } from './share/iterable-helper'
+import { range } from './helper/iterable-helper'
 
 const solve16 = async (size: number): Promise<Array<string>> => {
     const popularNameRows = (await fs.readFile('./res/popular-names.txt', 'utf-8'))

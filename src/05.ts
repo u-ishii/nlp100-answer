@@ -1,4 +1,4 @@
-import { range } from './share/iterable-helper'
+import { range } from './helper/iterable-helper'
 
 export { makeCharNGram }
 
