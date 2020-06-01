@@ -1,11 +1,9 @@
 import { getEnglandArticle } from './share/get-england-article'
 import { notEmpty } from './helper/iterable-helper'
 
-const categoryRegex = /\[\[Category\:([^\]]+)\]\]/
+const categoryRegex = /\[\[Category\:([^\]]+)\]\]/g
+const article = getEnglandArticle()
 console.log(
-    getEnglandArticle()
-        .split('\n')
-        .map(row => row.match(categoryRegex))
-        .filter(notEmpty)
+    [...article.matchAll(categoryRegex)]
         .map(match => match[1].split('|')[0])
 )

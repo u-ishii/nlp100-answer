@@ -1,12 +1,10 @@
 import { getEnglandArticle } from './share/get-england-article'
 import { notEmpty } from './helper/iterable-helper'
 
-const sectionRegex = /(?<open>==+) *(?<name>[^= ]+) *(?<close>==+)/
+const sectionRegex = /(?<open>==+) *(?<name>[^= ]+) *(?<close>==+)/g
+const article = getEnglandArticle()
 console.log(
-    getEnglandArticle()
-        .split('\n')
-        .map(row => row.match(sectionRegex))
-        .filter(notEmpty)
+    [...article.matchAll(sectionRegex)]
         .map(match => match.groups)
         .filter(notEmpty)
         .map(({ name, open }) => ({
