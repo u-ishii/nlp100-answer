@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs'
 
-const solve18 = async (): Promise<Array<[string, number]>> => {
+const solve19 = async (): Promise<Array<[string, number]>> => {
     return [
         ...(await fs.readFile('./res/popular-names.txt', 'utf-8'))
             .split('\n')
@@ -14,4 +14,4 @@ const solve18 = async (): Promise<Array<[string, number]>> => {
         .sort(([nameA, countA], [nameB, countB]) => countB - countA)
 }
 
-solve18().then(console.log)
+solve19().then(console.log)
