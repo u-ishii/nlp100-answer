@@ -13,4 +13,4 @@ const solve20 = async (): Promise<void> => {
     await fs.writeFile('./res/jawiki-england.json', englandArticles.join('\n'))
 }
 
-solve20().then(console.log)
+solve20()
