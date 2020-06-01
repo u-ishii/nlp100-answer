@@ -10,7 +10,7 @@ const solve11 = async (): Promise<void> => {
         range(rows1.length)
             .map(i => `${rows1[i]}\t${rows2[i]}`)
             .join('\n')
-    fs.writeFile('./res/merged.txt', merged)
+    await fs.writeFile('./res/merged.txt', merged)
 }
 
 solve11()

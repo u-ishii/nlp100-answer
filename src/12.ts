@@ -6,8 +6,8 @@ const solve11 = async (): Promise<void> => {
         .map(row => row.split('\t'))
     const pickColumn = (i: number): string =>
         table.map(row => row[i]).join('\n')
-    fs.writeFile('./res/col1.txt', pickColumn(0))
-    fs.writeFile('./res/col2.txt', pickColumn(1))
+    await fs.writeFile('./res/col1.txt', pickColumn(0))
+    await fs.writeFile('./res/col2.txt', pickColumn(1))
 }
 
 solve11()
