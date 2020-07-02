@@ -1,3 +1,5 @@
+# cut -c 1 res/popular-names.txt | sort | uniq
+
 from typing import List
 from operator import itemgetter
 from helper.file_helper import read_string

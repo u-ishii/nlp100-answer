@@ -1,3 +1,5 @@
+# cut -f 1 res/popular-names.txt | sort | uniq -c | sort -nr
+
 from helper.file_helper import read_string
 
 source = read_string("./res/popular-names.txt")
