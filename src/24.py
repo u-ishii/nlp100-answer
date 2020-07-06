@@ -1,11 +1,10 @@
 import re
 from share.get_england_text import get_england_text
 
+file_regex = re.compile(r'\[\[ファイル\:[^\]]+\]\]')
 text = get_england_text()
-
-category_regex = re.compile(r'\[\[Category\:([^\]|]+)(?:|\*)?\]\]')
 print(
     '\n'.join(
-        category_regex.findall(text)
+        file_regex.findall(text)
     )
 )
