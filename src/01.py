@@ -1,5 +1,2 @@
-
-source = 'stressed'
-print(
-    source[::-1]
-)
+source = "stressed"
+print(source[::-1])

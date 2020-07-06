@@ -8,16 +8,18 @@ def shuffle_string(source: str) -> str:
         tmp = result[i]
         result[i] = result[j]
         result[j] = tmp
-    return ''.join(result)
+    return "".join(result)
 
 
-source = 'I couldn’t believe that I could actually understand what I was reading : the phenomenal power of the human mind .'
+source = "I couldn’t believe that I could actually understand what I was reading : the phenomenal power of the human mind ."
 
 print(
-    ' '.join(
+    " ".join(
         map(
-            lambda word: (word[0] + shuffle_string(word[1:-1]) + word[-1]) if len(word) >= 4 else word,
-            source.split(' '),
+            lambda word: (word[0] + shuffle_string(word[1:-1]) + word[-1])
+            if len(word) >= 4
+            else word,
+            source.split(" "),
         )
     )
 )

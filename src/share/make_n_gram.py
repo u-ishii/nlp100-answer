@@ -1,20 +1,14 @@
-from typing import Tuple, Iterable
+from typing import Iterable, Tuple
 
 
 def make_n_gram(size: int, source: Iterable[str]) -> Tuple[Tuple[str]]:
     end = len(source) - size + 1
-    return tuple(map(
-        lambda i: tuple(source[i:(i + size)]),
-        range(end),
-    ))
+    return tuple(map(lambda i: tuple(source[i : (i + size)]), range(end),))
 
 
 def make_word_n_gram(size: int, source: str) -> Tuple[Tuple[str]]:
-    return make_n_gram(size, source.split(' '))
+    return make_n_gram(size, source.split(" "))
 
 
 def make_char_n_gram(size: int, source: str) -> Tuple[str]:
-    return tuple(map(
-        ''.join,
-        make_n_gram(size, tuple(source)),
-    ))
+    return tuple(map("".join, make_n_gram(size, tuple(source)),))
