@@ -8,7 +8,7 @@ def read_string(path: str) -> str:
 
 def write_string(path: str, content: str):
     with open(path, mode="w") as file:
-        return file.write(path, content)
+        return file.write(content)
 
 
 def read_gzip_string(path: str) -> str:
