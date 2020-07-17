@@ -1,6 +1,6 @@
 import re
 from operator import methodcaller
-from typing import List, Match, cast, Dict, Tuple
+from typing import Dict, List, Match, Tuple, cast
 
 from share.get_england_text import get_england_text
 
@@ -34,11 +34,6 @@ def pick_key_value(item_text: str) -> Tuple[str, str]:
 
 
 basic_info_item_connector_regex = re.compile(r"\s*=\s*")
-basic_info_items: Dict[str, str] = dict(
-    map(
-        pick_key_value,
-        basic_info_item_texts,
-    )
-)
+basic_info_items: Dict[str, str] = dict(map(pick_key_value, basic_info_item_texts,))
 
 print(basic_info_items)
