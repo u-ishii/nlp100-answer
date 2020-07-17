@@ -1,8 +1,8 @@
 from random import randrange
 
 
-def shuffle_string(source: str) -> str:
-    result = list(source)
+def shuffle_string(base: str) -> str:
+    result = list(base)
     for i in range(len(result) - 1, 0, -1):
         j = randrange(0, i)
         tmp = result[i]

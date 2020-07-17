@@ -2,7 +2,7 @@ def cipher_08(base: int, source: str) -> str:
     result = ""
     for source_char in source:
         code = ord(source_char)
-        if code >= ord("a") and code <= ord("z"):
+        if ord("a") <= code <= ord("z"):
             result += chr(base - code)
         else:
             result += source_char

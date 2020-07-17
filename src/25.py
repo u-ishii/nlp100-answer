@@ -28,8 +28,8 @@ basic_info_item_texts: List[str] = list(
 )
 
 
-def pick_key_value(text: str) -> Tuple[str, str]:
-    key, value = basic_info_item_connector_regex.split(text, maxsplit=1)
+def pick_key_value(item_text: str) -> Tuple[str, str]:
+    key, value = basic_info_item_connector_regex.split(item_text, maxsplit=1)
     return (key, value)
 
 
