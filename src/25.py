@@ -9,22 +9,12 @@ text = get_england_text()
 basic_info_open_regex = re.compile(r"^\{\{基礎情報 国", flags=re.MULTILINE)
 basic_info_close_regex = re.compile(r"^\}\}", flags=re.MULTILINE)
 basic_info_open_match = cast(Match[str], basic_info_open_regex.search(text))
-basic_info_close_match = cast(
-    Match[str], basic_info_close_regex.search(text, pos=basic_info_open_match.end())
-)
-basic_info_text = text[
-    basic_info_open_match.end() : basic_info_close_match.start()
-].strip()
+basic_info_close_match = cast(Match[str], basic_info_close_regex.search(text, pos=basic_info_open_match.end()))
+basic_info_text = text[basic_info_open_match.end() : basic_info_close_match.start()].strip()
 
 basic_info_item_separator_regex = re.compile(r"^\|", flags=re.MULTILINE)
 basic_info_item_texts: List[str] = list(
-    filter(
-        None,
-        map(
-            methodcaller("strip"),
-            basic_info_item_separator_regex.split(basic_info_text),
-        ),
-    )
+    filter(None, map(methodcaller("strip"), basic_info_item_separator_regex.split(basic_info_text),),)
 )
 
 
