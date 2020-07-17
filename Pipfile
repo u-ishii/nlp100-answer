@@ -12,7 +12,7 @@ nlp100-answer = {editable = true, path = "."}
 mypy = "*"
 
 [packages]
-nlp100-answer = {path = "."}
+nlp100-answer = {editable = true, path = "."}
 
 [requires]
 python_version = "3.8"

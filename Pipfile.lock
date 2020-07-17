@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4106424f0fdf71c81f9ff99125050f3c4018e28575b19f12a2c0ccd2bc70dcc4"
+            "sha256": "e1770ec668f4cfbc2ae03de24b83264e779296e2bad5d0b120f49e965ba2f03f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -17,8 +17,8 @@
     },
     "default": {
         "nlp100-answer": {
-            "path": ".",
-            "version": "==0.0.0"
+            "editable": true,
+            "path": "."
         }
     },
     "develop": {
@@ -139,8 +139,8 @@
             "version": "==0.4.3"
         },
         "nlp100-answer": {
-            "path": ".",
-            "version": "==0.0.0"
+            "editable": true,
+            "path": "."
         },
         "pathspec": {
             "hashes": [
