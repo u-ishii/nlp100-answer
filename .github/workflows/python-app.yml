@@ -27,8 +27,8 @@ jobs:
         pipenv install --dev -e .
     - name: Lint
       run: |
-        flake8 **/*.py
-        pylint **/*.py
-        mypy **/*.py
-        black --check **/*.py
-        isort --check **/*.py
+        pipenv run flake8 **/*.py
+        pipenv run pylint **/*.py
+        pipenv run mypy **/*.py
+        pipenv run black --check **/*.py
+        pipenv run isort --check **/*.py
