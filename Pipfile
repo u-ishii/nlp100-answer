@@ -9,6 +9,7 @@ black = "==19.10b0"
 isort = "*"
 pylint = "*"
 nlp100-answer = {editable = true, path = "."}
+mypy = "*"
 
 [packages]
 nlp100-answer = {path = "."}
