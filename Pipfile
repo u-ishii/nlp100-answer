@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+black = "==19.10b0"
+isort = "*"
+pylint = "*"
+nlp100-answer = {editable = true, path = "."}
+
+[packages]
+nlp100-answer = {path = "."}
+
+[requires]
+python_version = "3.8"
