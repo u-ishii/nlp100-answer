@@ -10,6 +10,8 @@ isort = "*"
 pylint = "*"
 nlp100-answer = {editable = true, path = "."}
 mypy = "*"
+tox = "*"
+wrapt = {editable = true, path = "."}
 
 [packages]
 nlp100-answer = {editable = true, path = "."}

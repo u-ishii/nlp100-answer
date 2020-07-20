@@ -1,4 +1,0 @@
-flake8 **/*.py && \
-pylint **/*.py && \
-black --check **/*.py && \
-isort --check **/*.py
