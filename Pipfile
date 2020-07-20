@@ -1,3 +1,6 @@
+[pipenv]
+allow_prereleases = true
+
 [[source]]
 name = "pypi"
 url = "https://pypi.org/simple"
@@ -6,12 +9,11 @@ verify_ssl = true
 [dev-packages]
 nlp100-answer = {editable = true, path = "."}
 flake8 = "*"
-black = "==19.10b0"
+black = "*"
 isort = "*"
 pylint = "*"
 mypy = "*"
 tox = "*"
-wrapt = "*"
 
 [packages]
 nlp100-answer = {editable = true, path = "."}
