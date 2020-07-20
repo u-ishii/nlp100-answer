@@ -1,2 +1,1 @@
-black **/*.py && \
-isort **/*.py
+black src && isort src

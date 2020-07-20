@@ -4,14 +4,14 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+nlp100-answer = {editable = true, path = "."}
 flake8 = "*"
 black = "==19.10b0"
 isort = "*"
 pylint = "*"
-nlp100-answer = {editable = true, path = "."}
 mypy = "*"
 tox = "*"
-wrapt = {editable = true, path = "."}
+wrapt = "*"
 
 [packages]
 nlp100-answer = {editable = true, path = "."}
