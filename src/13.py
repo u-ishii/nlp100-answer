@@ -1,6 +1,6 @@
 # paste res/col1.txt res/col2.txt
 
-from helper.file_helper import read_string, write_string
+from .helper.file_helper import read_string, write_string
 
 source = read_string("./res/popular-names.txt")
 rows1 = read_string("./res/col1.txt")

@@ -2,7 +2,7 @@ import re
 from operator import methodcaller
 from typing import Dict, List, Match, Tuple, cast
 
-from share.get_england_text import get_england_text
+from .share.get_england_text import get_england_text
 
 text = get_england_text()
 

@@ -1,6 +1,6 @@
 import json
 
-from helper.file_helper import read_gzip_string
+from ..helper.file_helper import read_gzip_string
 
 
 def get_england_text() -> str:

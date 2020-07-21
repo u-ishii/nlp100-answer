@@ -1,4 +1,4 @@
-from share.make_n_gram import make_char_n_gram
+from .share.make_n_gram import make_char_n_gram
 
 set_a = set(make_char_n_gram(2, "paraparaparadise"))
 set_b = set(make_char_n_gram(2, "paragraph"))
